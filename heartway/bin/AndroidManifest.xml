@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.john.heartway"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+   
+ 
+<!--     //地图包、搜索包需要的基础权限 -->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+<!--     //定位包、导航包需要的额外权限（注：基础权限也需要） -->
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data android:name="com.amap.api.v2.apikey" 
+                    android:value="c62eedaa2bc5f8ba3556e03049f29216" />
+         
+        <service android:name="com.amap.api.location.APSService"></service>
+
+           <!--   #禁止屏幕横竖切换，portrait为纵向，landscape为横向 -->
+        <activity
+            android:name="com.john.heartway.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.john.heartway.register"
+            android:screenOrientation="portrait"
+             >
+        </activity>
+        <activity
+            android:name="com.john.heartway.MainActivity"
+            android:screenOrientation="portrait"
+             >
+        </activity>
+    </application>
+
+</manifest>
